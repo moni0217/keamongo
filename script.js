@@ -30,11 +30,14 @@ var malaga = {
 
 
 
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 4
     });
+
+
 
     var marker1 = new google.maps.Marker({
         position: lyon,
@@ -44,6 +47,7 @@ function initMap() {
         draggable: true,
         animation: google.maps.Animation.DROP,
     })
+
 
 
     var marker2 = new google.maps.Marker({
@@ -92,6 +96,15 @@ function initMap() {
         draggable: true,
         animation: google.maps.Animation.DROP,
     })
+
+    var infowindow = new google.maps.InfoWindow({
+        content: document.querySelector("#h1_lyon"),
+        position: lyon
+    });
+
+    infowindow.open(map, marker1);
+
+
     var markerArr = [marker1, marker2, marker3, marker4, marker5, marker6];
 
 
