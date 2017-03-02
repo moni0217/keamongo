@@ -44,7 +44,7 @@ function initMap() {
         draggable: true,
         animation: google.maps.Animation.DROP,
     })
-    marker1.addListener('click', toggleBounce);
+
 
     var marker2 = new google.maps.Marker({
         position: lygten,
@@ -92,12 +92,21 @@ function initMap() {
         draggable: true,
         animation: google.maps.Animation.DROP,
     })
+    var markerArr = [marker1, marker2, marker3, marker4, marker5, marker6];
 
-    function toggleBounce() {
-        if (marker1.getAnimation() !== null) {
-            marker1.setAnimation(null);
+
+    markerArr.forEach(oneOfTheMarkers => oneOfTheMarkers.addListener('click', function () {
+        if (oneOfTheMarkers.getAnimation() !== null) {
+            oneOfTheMarkers.setAnimation(null);
         } else {
-            marker1.setAnimation(google.maps.Animation.BOUNCE);
+            mapClick();
+            oneOfTheMarkers.setAnimation(google.maps.Animation.BOUNCE);
         }
+    }));
+    map.addListener("click", mapClick);
+
+    function mapClick() {
+        console.log("mappet er klikket på");
+        markerArr.forEach(oneOfTheMarkers => oneOfTheMarkers.setAnimation(null));
     }
 }
