@@ -40,10 +40,58 @@ function initMap() {
         position: lyon,
         map: map,
         title: 'Lyon!',
+        icon: "img/mario.png",
         draggable: true,
         animation: google.maps.Animation.DROP,
     })
     marker1.addListener('click', toggleBounce);
+
+    var marker2 = new google.maps.Marker({
+        position: lygten,
+        map: map,
+        title: 'Lygten!',
+        icon: "img/mario.png",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+    })
+
+
+    var marker3 = new google.maps.Marker({
+        position: alcudia,
+        map: map,
+        title: 'Alcudia!',
+        icon: "img/mario.png",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+    })
+
+
+    var marker4 = new google.maps.Marker({
+        position: rom,
+        map: map,
+        title: 'Rom!',
+        icon: "img/mario.png",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+    })
+
+    var marker5 = new google.maps.Marker({
+        position: london,
+        map: map,
+        title: 'London!',
+        icon: "img/mario.png",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+    })
+
+    var marker6 = new google.maps.Marker({
+        position: malaga,
+        map: map,
+        title: 'Malaga!',
+        icon: "img/mario.png",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+    })
 
     function toggleBounce() {
         if (marker1.getAnimation() !== null) {
@@ -52,34 +100,4 @@ function initMap() {
             marker1.setAnimation(google.maps.Animation.BOUNCE);
         }
     }
-
-        var marker2 = new google.maps.Marker({
-         position: lygten,
-         map: map,
-         title: 'Lygten!'
-     })
-
-     var marker3 = new google.maps.Marker({
-         position: alcudia,
-         map: map,
-         title: 'Alcudia!'
-     })
-
-     var marker4 = new google.maps.Marker({
-         position: rom,
-         map: map,
-         title: 'Rom!'
-     })
-
-     var marker5 = new google.maps.Marker({
-         position: london,
-         map: map,
-         title: 'London!'
-     })
-
-     var marker6 = new google.maps.Marker({
-         position: malaga,
-         map: map,
-         title: 'Malaga!'
-     })
 }
